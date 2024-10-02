@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/meanmenu.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/boxicons.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/dark.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}" />
+
+<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon-removebg-preview.png') }}" /> -->
+
+<title>MindCare AI</title>
+<style>
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-list {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0; 
+    margin: 0; 
+    list-style-type: none; 
+    background-color: #e0e0e0; 
+}
+
+.nav-item {
+    flex: 1; 
+    text-align: center; 
+    padding: 15px; 
+}
+
+.nav-item a {
+    text-decoration: none; 
+    color: #007bff;
+    display: block; 
+}
+
+.nav-item a:hover {
+    text-decoration: underline; 
+}
+
+    .resources-list {
+    list-style-type: none; 
+    padding: 20px; 
+    background-color: #e0e0e0; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.resources-list li {
+    margin-bottom: 20px; 
+    background-color: #221c1c; 
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.resources-list strong {
+    display: block; 
+    margin-bottom: 10px; 
+    font-size: 1.2em; 
+    color: #fcfafa; 
+}
+
+.resources-list a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+.resources-list a:hover {
+    text-decoration: underline; 
+}
+
+.resources-list ul {
+    list-style-type: disc; 
+    padding-left: 20px; 
+}
+
+
+    
+
+</style>
+</head>
+<body>
+
+<div class="loader-content">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="sk-folding-cube">
+<div class="sk-cube1 sk-cube"></div>
+<div class="sk-cube2 sk-cube"></div>
+<div class="sk-cube4 sk-cube"></div>
+<div class="sk-cube3 sk-cube"></div>
+</div>
+</div>
+</div>
+</div>
+
+
+<header class="header-area">
+<div class="row align-items-center">
+<div class="col-lg-2 col-sm-0">
+<div class="logo">
+<a href="/">
+    <div  style="display: flex;justify-content: center;align-items: center;">
+    <img src="{{ url_for('static', filename='assets/images/hack imgs/logo_last2.png') }}" alt="logo"  style="max-width: 40%; height: 50%; border-radius: 50%; margin-left: 120px;"/>
+    <h2 style="margin-top:7px;">MindCare AI</h2>
+</div>
+</a>
+</div>
+</div>
+<div class="col-lg-8 col-sm-8 text-right pr-0">
+<div class="header-content-right">
+</ul>
+</div>
+</div>
+</div>
+</header>
+
+
+<div class="header-area">
+<div class="mobile-nav">
+<a href="/" class="logo">
+<img src="{{ url_for('static', filename='assets/images/new_logo.png') }}" alt="logo" />
+</a>
+</div>
+<div class="main-nav">
+    <div class="container">
+    <nav class="navbar navbar-expand-md navbar-light">
+    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+    <ul class="navbar-nav text-center">
+    <li class="nav-item">
+    <a href="/" class="nav-link">HOME</a>
+    </li>
+    <li class="nav-item">
+    <a href="/about" class="nav-link">ABOUT</a>
+    </li>
+    <li class="nav-item">
+    <a href="/prognosis" class="nav-link">PROGNOSIS</a>
+    </li>
+    <li class="nav-item">
+        <a href="/chatbot" class="nav-link">CHATBOT</a>
+    </li>
+    
+    <li class="nav-item">
+        <a href="/relaxation" class="nav-link active">Relaxation Tools</a>
+    </li>
+    
+    <li class="nav-item">
+        <a href="/supporthub" class="nav-link">Support Hub</a>
+    </li>
+
+    <li class="nav-item">
+    <a href="/blog" class="nav-link">BLOG</a>
+    </li>
+    </ul>
+    </div>
+    <div class="nav-right">
+    </div>
+    <div class="nav-btn">
+    <a href="/prognosis" class="box-btn">Get Started</a>
+    </div>
+    </nav>
+    </div>
+</div>
+  
+  
+</div>
+</div>
+
+
+<div class="page-title-area">
+<div class="container">
+<div class="page-title-content">
+<h2>Relaxation Tools</h2>
+<ul>
+<li>
+<a href="/">
+Home
+</a>
+</li>
+<li class="active">Relaxation Tools</li>
+</ul>
+</div>
+</div>
+<div class="page-shape">
+<div class="shape1">
+<img src="{{ url_for('static', filename='assets/images/shape/1.png') }}" alt="shape" />
+</div>
+<div class="shape3">
+<img src="{{ url_for('static', filename='assets/images/shape/3.png') }}" alt="shape" />
+</div>
+<div class="shape4">
+<img src="{{ url_for('static', filename='assets/images/shape/4.png') }}" alt="shape" />
+</div>
+<div class="shape5">
+<img src="{{ url_for('static', filename='assets/images/shape/5.png') }}" alt="shape" />
+</div>
+<div class="shape6">
+<img src="{{ url_for('static', filename='assets/images/shape/6.png') }}" alt="shape" />
+</div>
+</div>
+</div>
+
+
+<section class="home-company-area">
+    <div class="container">
+        <div class="row align-items-center">
+            
+                <main>
+                    <h1>Relaxation Tools for Students</h1>
+                    <h2>Effective Tools for Mental Health</h2>
+                    <p>Here are some relaxation tools to help manage stress and promote mental well-being:</p>
+                    <ul>
+                        <div class="resources-list">
+                            <li>
+                                <strong>Mindfulness and Meditation Apps:</strong>
+                                <ul>
+                                    <li><a href="https://www.headspace.com/" target="_blank">Headspace</a></li>
+                                    <li><a href="https://www.calm.com/" target="_blank">Calm</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Breathing Exercises:</strong>
+                                <ul>
+                                    <li><a href="https://play.google.com/store/apps/details?id=com.breathe2relax.breathe2relax&hl=en&gl=US" target="_blank">Breathe2Relax</a></li>
+                                    <li><a href="https://www.medicalnewstoday.com/articles/321805" target="_blank">Square Breathing Technique</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Progressive Muscle Relaxation:</strong>
+                                <ul>
+                                    <li>Audio Guides available on <a href="https://www.youtube.com/results?search_query=progressive+muscle+relaxation" target="_blank">YouTube</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Yoga and Stretching:</strong>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/user/yogawithadriene" target="_blank">Yoga with Adriene (YouTube)</a></li>
+                                    <li><a href="https://www.stretchitapp.com/" target="_blank">StretchIt App</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Nature Sounds and Music:</strong>
+                                <ul>
+                                    <li><a href="https://play.google.com/store/apps/details?id=com.rain.rain&hl=en&gl=US" target="_blank">Rain Rain</a> (White Noise App)</li>
+                                    <li><a href="https://www.spotify.com/" target="_blank">Spotify</a> (Create calming playlists)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Journaling:</strong>
+                                <ul>
+                                    <li><a href="https://www.dayoneapp.com/" target="_blank">Day One</a> (Journaling App)</li>
+                                    <li>Expressive Writing (any notebook will do!)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Art and Creativity Tools:</strong>
+                                <ul>
+                                    <li><a href="https://www.colorfy.net/" target="_blank">Colorfy</a> (Coloring App)</li>
+                                    <li><a href="https://www.canva.com/" target="_blank">Canva</a> (Creative Design Tool)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Physical Activity:</strong>
+                                <ul>
+                                    <li>Check out <a href="https://www.youtube.com/results?search_query=home+workouts" target="_blank">YouTube</a> for exercise videos</li>
+                                    <li>Join or form walking groups</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Guided Visualization:</strong>
+                                <ul>
+                                    <li>Relaxation Scripts available online</li>
+                                    <li><a href="https://www.youtube.com/results?search_query=guided+visualization+meditation" target="_blank">YouTube Guided Visualizations</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Online Support Communities:</strong>
+                                <ul>
+                                    <li><a href="https://discord.com/" target="_blank">Discord</a> (Join supportive groups)</li>
+                                    <li><a href="https://www.7cups.com/" target="_blank">7 Cups</a> (Online chat support)</li>
+                                </ul>
+                            </li>
+                        </div>
+                        
+                    </ul>
+                </main>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<style>
+
+    .aquaimagehigh{
+        filter: drop-shadow(10px 7px 10px Aqua);
+    }
+
+    .whiteimagehigh{
+        filter: drop-shadow(10px 7px 10px );
+    }
+
+</style>
+
+
+
+<div class="go-top">
+<i class="bx bx-chevrons-up"></i>
+<i class="bx bx-chevrons-up"></i>
+</div>
+
+
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/meanmenu.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/magnific-popup.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/wow.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/isotope.pkgd.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/ajaxchimp.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/form-validator.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/contact-form-script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+</html>

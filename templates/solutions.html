@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=Yes" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap-select.min.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/meanmenu.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/boxicons.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/dark.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}" />
+
+<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon-removebg-preview.png') }}" /> -->
+
+<style>
+    img.logo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    @media screen and (max-width: 768px) {
+        
+        .navbar-brand {
+            font-size: 18px;
+        }
+        
+    }
+</style>
+<title>MindCare AI</title>
+</head>
+<body>
+
+<div class="loader-content">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="sk-folding-cube">
+<div class="sk-cube1 sk-cube"></div>
+<div class="sk-cube2 sk-cube"></div>
+<div class="sk-cube4 sk-cube"></div>
+<div class="sk-cube3 sk-cube"></div>
+</div>
+</div>
+</div>
+</div>
+
+
+<header class="header-area">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-2 col-sm-0">
+<div class="logo">
+    <a href="/">
+        <div  style="display: flex;justify-content: center;align-items: center;">
+        <!-- <img src="{{ url_for('static', filename='assets/images/new_logo.png') }}" alt="logo"  style="max-width: 60%; height: 50%;"/> -->
+        <h2 style="margin-top:7px;">MindCare AI</h2>
+    </div>
+    </a>
+</div>
+</div>
+</div>
+</header>
+
+
+<div class="header-area">
+<div class="mobile-nav">
+<a href="/" class="logo">
+<img src="{{ url_for('static', filename='assets/images/new_logo.png') }}" alt="logo" />
+</a>
+</div>
+<div class="main-nav">
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-light">
+<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+<ul class="navbar-nav text-center">
+<li class="nav-item">
+<a href="/" class="nav-link">HOME</a>
+</li>
+<li class="nav-item">
+<a href="/about" class="nav-link">ABOUT</a>
+</li>
+<li class="nav-item active">
+<a href="/prognosis" class="nav-link active">PROGNOSIS</a>
+</li>
+<li class="nav-item">
+    <a href="/chatbot" class="nav-link">CHATBOT</a>
+</li>
+
+<li class="nav-item">
+    <a href="/relaxation" class="nav-link">Relaxation Tools</a>
+</li>
+
+<li class="nav-item">
+    <a href="/supporthub" class="nav-link">Support Hub</a>
+</li>
+
+<li class="nav-item">
+<a href="/blog" class="nav-link">BLOG</a>
+</li>
+</ul>
+</div>
+<div class="nav-right">
+</div>
+<div class="nav-btn">
+<a href="/prognosis" class="box-btn">Get Started</a>
+</div>
+</nav>
+</div>
+</div>
+</div>
+
+
+<div class="page-title-area">
+<div class="container">
+<div class="page-title-content">
+<h2>Unlock Your Personalized Mental Health Insights</h2>
+<ul>
+<li class="active">Prognosis</li>
+</ul>
+</div>
+</div>
+<div class="page-shape">
+<div class="shape1">
+<img src="{{ url_for('static', filename='assets/images/shape/1.png') }}" alt="shape" />
+</div>
+<div class="shape3">
+<img src="{{ url_for('static', filename='assets/images/shape/3.png') }}" alt="shape" />
+</div>
+<div class="shape4">
+<img src="{{ url_for('static', filename='assets/images/shape/4.png') }}" alt="shape" />
+</div>
+<div class="shape5">
+<img src="{{ url_for('static', filename='assets/images/shape/5.png') }}" alt="shape" />
+</div>
+<div class="shape6">
+<img src="{{ url_for('static', filename='assets/images/shape/6.png') }}" alt="shape" />
+</div>
+</div>
+</div>
+
+
+<section class="home-contact-area home-2-contact pb-100">
+    <div class="container">
+        <div class="section-title">
+            <span> </span></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="content">
+                    <form action = "/submit_prognosis_form" method="post" id="prognosisForm">
+                        <div class="row">
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="name" class="control-label">Name :</label><br>
+                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="gender" class="control-label">Gender :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="gender">
+                                        <button type="button" class="btn btn-primary" data-value="Male" onclick="selectgender('Male')">Male</button>
+                                        <button type="button" class="btn btn-primary" data-value="Female" onclick="selectgender('Female')">Female</button>
+                                    </div>
+                                    <input type="hidden" name="gender" id="gender" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> 
+                            <script>
+                            let activeGenderButton = null;
+                        
+                            function selectgender(gender) 
+                            {
+                                const selectedButton = document.querySelector(`button[data-value='${gender}']`);
+                        
+                                if (activeGenderButton === selectedButton) 
+                                {
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById('gender').value = '';
+                                    activeGenderButton = null;
+                                } 
+                                else 
+                                {
+                                    if (activeGenderButton) 
+                                    {
+                                        activeGenderButton.classList.remove('active');
+                                        activeGenderButton.style.backgroundColor = 'black';
+                                    }
+                        
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById('gender').value = gender;
+                                    activeGenderButton = selectedButton;
+                                }
+                            }
+                            </script>
+                    
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="age" class="control-label">Age :</a></label><br>
+                                    <input type="number" name="age" id="age" class="form-control" required data-error="Please enter your Age" placeholder="Age" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="degree" class="control-label">Degree Level :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="degree">
+                                        <button type="button" class="btn btn-primary" data-value="Undergraduate" onclick="selectDegree('Undergraduate')">Undergraduate</button>
+                                        <button type="button" class="btn btn-primary" data-value="Postgraduate" onclick="selectDegree('Postgraduate')">Postgraduate</button>
+                                    </div>
+                                    <input type="hidden" name="degree" id="degree" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> 
+                            
+                            <script>
+                            let activeDegreeButton = null;
+                            
+                            function selectDegree(degree) {
+                                const selectedButton = document.querySelector(`button[data-value='${degree}']`);
+                            
+                                if (activeDegreeButton === selectedButton) {
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById('degree').value = '';
+                                    activeDegreeButton = null;
+                                } else {
+                                    if (activeDegreeButton) {
+                                        activeDegreeButton.classList.remove('active');
+                                        activeDegreeButton.style.backgroundColor = 'black';
+                                    }
+                            
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById('degree').value = degree;
+                                    activeDegreeButton = selectedButton;
+                                }
+                            }
+                            </script>
+                            
+                            <style>
+                                .btn {
+                                    background-color: #f2f2f200;
+                                }
+                            </style>
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="academicYear" class="control-label">Academic Year :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="academic-year">
+                                        <button type="button" class="btn btn-primary" data-value="1st" onclick="selectAcademicYear('1st')">1st</button>
+                                        <button type="button" class="btn btn-primary" data-value="2nd" onclick="selectAcademicYear('2nd')">2nd</button>
+                                        <button type="button" class="btn btn-primary" data-value="3rd" onclick="selectAcademicYear('3rd')">3rd</button>
+                                        <button type="button" class="btn btn-primary" data-value="4th" onclick="selectAcademicYear('4th')">4th</button>
+                                    </div>
+                                    <input type="hidden" name="academicYear" id="academicYear" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <script>
+                            let activeAcademicYearButton = null;
+
+                            function selectAcademicYear(year) {
+                                const selectedButton = document.querySelector(`button[data-value='${year}']`);
+
+                                if (activeAcademicYearButton === selectedButton) {
+                                    // Deselect the button if it's already selected
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById('academicYear').value = '';
+                                    activeAcademicYearButton = null;
+                                } else {
+                                    if (activeAcademicYearButton) {
+                                        activeAcademicYearButton.classList.remove('active');
+                                        activeAcademicYearButton.style.backgroundColor = 'black';
+                                    }
+
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById('academicYear').value = year;
+                                    activeAcademicYearButton = selectedButton;
+                                }
+                            }
+                            </script>
+
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="residentialStatus" class="control-label">Residential Status :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="residential-status">
+                                        <button type="button" class="btn btn-primary" data-value="On-campus" onclick="selectResidentialStatus('On-campus')">On-campus</button>
+                                        <button type="button" class="btn btn-primary" data-value="Off-campus" onclick="selectResidentialStatus('Off-campus')">Off-campus</button>
+                                    </div>
+                                    <input type="hidden" name="residentialStatus" id="residentialStatus" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <script>
+                            let activeResidentialStatusButton = null;
+
+                            function selectResidentialStatus(status) {
+                                const selectedButton = document.querySelector(`button[data-value='${status}']`);
+
+                                if (activeResidentialStatusButton === selectedButton) {
+                                    // Deselect the button if it's already selected
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById('residentialStatus').value = '';
+                                    activeResidentialStatusButton = null;
+                                } else {
+                                    if (activeResidentialStatusButton) {
+                                        activeResidentialStatusButton.classList.remove('active');
+                                        activeResidentialStatusButton.style.backgroundColor = 'black';
+                                    }
+
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById('residentialStatus').value = status;
+                                    activeResidentialStatusButton = selectedButton;
+                                }
+                            }
+                            </script>
+
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="sportsEngagement" class="control-label">Sports Engagement :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="sports-engagement">
+                                        <button type="button" class="btn btn-primary" data-value="No sports" onclick="selectSportsEngagement('No sports')">No sports</button>
+                                        <button type="button" class="btn btn-primary" data-value="1-3 times" onclick="selectSportsEngagement('1-3 times')">1-3 times</button>
+                                        <button type="button" class="btn btn-primary" data-value="4-6 times" onclick="selectSportsEngagement('4-6 times')">4-6 times</button>
+                                        <button type="button" class="btn btn-primary" data-value="7+ times" onclick="selectSportsEngagement('7+ times')">7+ times</button>
+                                    </div>
+                                    <input type="hidden" name="sportsEngagement" id="sportsEngagement" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <script>
+                            let activeSportsEngagementButton = null;
+
+                            function selectSportsEngagement(engagement) {
+                                const selectedButton = document.querySelector(`button[data-value='${engagement}']`);
+
+                                if (activeSportsEngagementButton === selectedButton) {
+                                    // Deselect the button if it's already selected
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById('sportsEngagement').value = '';
+                                    activeSportsEngagementButton = null;
+                                } else {
+                                    if (activeSportsEngagementButton) {
+                                        activeSportsEngagementButton.classList.remove('active');
+                                        activeSportsEngagementButton.style.backgroundColor = 'black';
+                                    }
+
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById('sportsEngagement').value = engagement;
+                                    activeSportsEngagementButton = selectedButton;
+                                }
+                            }
+                            </script>
+
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="averageSleep" class="control-label">Average Sleep in Hours :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="average-sleep">
+                                        <button type="button" class="btn btn-primary" data-value="2-4" onclick="selectAverageSleep('2-4')">2-4</button>
+                                        <button type="button" class="btn btn-primary" data-value="4-6" onclick="selectAverageSleep('4-6')">4-6</button>
+                                        <button type="button" class="btn btn-primary" data-value="7+" onclick="selectAverageSleep('7+')">7+</button>
+                                    </div>
+                                    <input type="hidden" name="averageSleep" id="averageSleep" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <script>
+                            let activeAverageSleepButton = null;
+
+                            function selectAverageSleep(hours) {
+                                const selectedButton = document.querySelector(`button[data-value='${hours}']`);
+
+                                if (activeAverageSleepButton === selectedButton) {
+                                    // Deselect the button if it's already selected
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById('averageSleep').value = '';
+                                    activeAverageSleepButton = null;
+                                } else {
+                                    if (activeAverageSleepButton) {
+                                        activeAverageSleepButton.classList.remove('active');
+                                        activeAverageSleepButton.style.backgroundColor = 'black';
+                                    }
+
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById('averageSleep').value = hours;
+                                    activeAverageSleepButton = selectedButton;
+                                }
+                            }
+                            </script>
+                            
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="studySatisfaction" class="control-label">Study Satisfaction :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="study-satisfaction">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectButton('studySatisfaction', this)">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectButton('studySatisfaction', this)">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectButton('studySatisfaction', this)">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectButton('studySatisfaction', this)">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectButton('studySatisfaction', this)">5</button>
+                                    </div>
+                                    <input type="hidden" name="studySatisfaction" id="studySatisfaction" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="academicWorkload" class="control-label">Academic Workload :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="academic-workload">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectButton('academicWorkload', this)">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectButton('academicWorkload', this)">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectButton('academicWorkload', this)">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectButton('academicWorkload', this)">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectButton('academicWorkload', this)">5</button>
+                                    </div>
+                                    <input type="hidden" name="academicWorkload" id="academicWorkload" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="academicPressure" class="control-label">Academic Pressure :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="academic-pressure">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectButton('academicPressure', this)">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectButton('academicPressure', this)">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectButton('academicPressure', this)">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectButton('academicPressure', this)">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectButton('academicPressure', this)">5</button>
+                                    </div>
+                                    <input type="hidden" name="academicPressure" id="academicPressure" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="financialConcerns" class="control-label">Financial Concerns :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="financial-concerns">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectButton('financialConcerns', this)">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectButton('financialConcerns', this)">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectButton('financialConcerns', this)">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectButton('financialConcerns', this)">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectButton('financialConcerns', this)">5</button>
+                                    </div>
+                                    <input type="hidden" name="financialConcerns" id="financialConcerns" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="socialRelationships" class="control-label">Social Relationships :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="social-relationships">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectButton('socialRelationships', this)">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectButton('socialRelationships', this)">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectButton('socialRelationships', this)">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectButton('socialRelationships', this)">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectButton('socialRelationships', this)">5</button>
+                                    </div>
+                                    <input type="hidden" name="socialRelationships" id="socialRelationships" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <script>
+                            function selectButton(inputId, selectedButton) {
+                                const buttonGroup = selectedButton.parentElement;
+                                const buttons = buttonGroup.querySelectorAll('button');
+                                const inputField = document.getElementById(inputId);
+                                
+                                buttons.forEach(button => {
+                                    if (button === selectedButton) {
+                                        // Deselect if it's already selected
+                                        if (button.classList.contains('active')) {
+                                            button.classList.remove('active');
+                                            button.style.backgroundColor = 'black';
+                                            inputField.value = '';
+                                        } else {
+                                            // Select the new button
+                                            button.classList.add('active');
+                                            button.style.backgroundColor = 'blue';
+                                            inputField.value = button.getAttribute('data-value');
+                                        }
+                                    } else {
+                                        // Reset the others
+                                        button.classList.remove('active');
+                                        button.style.backgroundColor = 'black';
+                                    }
+                                });
+                            }
+                            </script>
+                            
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="anxiety" class="control-label">Anxiety :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="anxiety">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectLevel('anxiety', '1')">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectLevel('anxiety', '2')">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectLevel('anxiety', '3')">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectLevel('anxiety', '4')">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectLevel('anxiety', '5')">5</button>
+                                    </div>
+                                    <input type="hidden" name="anxiety" id="anxiety" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="isolation" class="control-label">Isolation :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="isolation">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectLevel('isolation', '1')">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectLevel('isolation', '2')">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectLevel('isolation', '3')">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectLevel('isolation', '4')">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectLevel('isolation', '5')">5</button>
+                                    </div>
+                                    <input type="hidden" name="isolation" id="isolation" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="futureInsecurity" class="control-label">Future Insecurity :</a></label><br>
+                                    <div class="btn-group" role="group" aria-label="future-insecurity">
+                                        <button type="button" class="btn btn-primary" data-value="1" onclick="selectLevel('futureInsecurity', '1')">1</button>
+                                        <button type="button" class="btn btn-primary" data-value="2" onclick="selectLevel('futureInsecurity', '2')">2</button>
+                                        <button type="button" class="btn btn-primary" data-value="3" onclick="selectLevel('futureInsecurity', '3')">3</button>
+                                        <button type="button" class="btn btn-primary" data-value="4" onclick="selectLevel('futureInsecurity', '4')">4</button>
+                                        <button type="button" class="btn btn-primary" data-value="5" onclick="selectLevel('futureInsecurity', '5')">5</button>
+                                    </div>
+                                    <input type="hidden" name="futureInsecurity" id="futureInsecurity" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            
+                            <script>
+                            let activeButtons = {};
+                            
+                            function selectLevel(category, level) {
+                                const selectedButton = document.querySelector(`button[data-value='${level}'][onclick*='${category}']`);
+                            
+                                // Deselect previously selected button for the category
+                                if (activeButtons[category] === selectedButton) {
+                                    selectedButton.classList.remove('active');
+                                    selectedButton.style.backgroundColor = 'black';
+                                    document.getElementById(category).value = '';
+                                    activeButtons[category] = null;
+                                } else {
+                                    if (activeButtons[category]) {
+                                        activeButtons[category].classList.remove('active');
+                                        activeButtons[category].style.backgroundColor = 'black';
+                                    }
+                            
+                                    selectedButton.classList.add('active');
+                                    selectedButton.style.backgroundColor = 'blue';
+                                    document.getElementById(category).value = level;
+                                    activeButtons[category] = selectedButton;
+                                }
+                            }
+                            </script>
+
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn page-btn box-btn">
+                                    Submit
+                                </button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div id="resultBlock" class="result-block">
+                                <p id="percentageValue" class="percentage-value"></p>
+                                <p id="remedies" class="remedies-value"></p>
+                            </div>
+                            
+                            <style>
+                                /* Styles for the result block */
+                                .result-block {
+                                    display: none;
+                                    background-color: #f2f2f200;
+                                    padding: 20px;
+                                    border-radius: 8px;
+                                    margin-top: 20px;
+                                    text-align: center;
+                                }
+                            
+                                .percentage-value {
+                                    font-size: 24px;
+                                    color: #333;
+                                    font-weight: bold;
+                                }
+                            
+                                .remedies-value {
+                                    font-size: 20px;
+                                    color: #333;
+                                    font-weight: bold;
+                                    margin-top: 10px;
+                                }
+                            </style>
+                            
+                            <script>
+                                // Get the form element
+                                const form = document.getElementById('prognosisForm');
+                            
+                                // Add an event listener for form submission
+                                form.addEventListener('submit', function (event) {
+                                    event.preventDefault(); // Prevent default form submission
+                            
+                                    // Make a fetch request to the backend
+                                    fetch('/submit_prognosis_form', {
+                                        method: 'POST',
+                                        body: new FormData(form),
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        // Display the result block
+                                        const resultBlock = document.getElementById('resultBlock');
+                                        resultBlock.style.display = 'block';
+                            
+                                        // Display the risk percentage
+                                        const percentageValue = document.getElementById('percentageValue');
+                                        percentageValue.textContent = `RISK: ${data.heart_risk_percentage}`;
+                            
+                                        // Display the remedies suggested by the backend
+                                        const remedies = document.getElementById('remedies');
+                                        remedies.textContent = `SUGGESTIONS: ${data.remedies}`;
+                                    })
+                                    .catch(error => {
+                                        console.error('Error:', error);
+                                        // Handle error if needed
+                                    });
+                                });
+                            </script>
+                            
+                            
+
+
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>  
+
+
+
+<div class="go-top">
+<i class="bx bx-chevrons-up"></i>
+<i class="bx bx-chevrons-up"></i>
+</div>
+
+
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/bootstrap-select.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/meanmenu.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/magnific-popup.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/wow.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/isotope.pkgd.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/ajaxchimp.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/form-validator.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/contact-form-script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+
+</html>

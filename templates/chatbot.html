@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/meanmenu.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/boxicons.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/dark.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}" />
+
+<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon-removebg-preview.png') }}" /> -->
+
+<title>MindCare AI</title>
+</head>
+<body>
+
+<div class="loader-content">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="sk-folding-cube">
+<div class="sk-cube1 sk-cube"></div>
+<div class="sk-cube2 sk-cube"></div>
+<div class="sk-cube4 sk-cube"></div>
+<div class="sk-cube3 sk-cube"></div>
+</div>
+</div>
+</div>
+</div>
+
+
+<header class="header-area">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-2 col-sm-0">
+<div class="logo"><style></style>
+<a href="/">
+    <div  style="display: flex;justify-content: center;align-items: center;">
+    <img src="{{ url_for('static', filename='assets/images/hack imgs/logo_last2.png') }}" alt="logo"  style="max-width: 30%; height: 50%; border-radius: 50%;"/>
+    <h2 style="margin-top:7px; white-space: nowrap;">MindCare AI</h2>
+</div>
+</a>
+</div>
+</div>
+<div class="col-lg-8 col-sm-8 text-right pr-0">
+<div class="header-content-right">
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+
+<div class="header-area">
+<div class="mobile-nav">
+<a href="/" class="logo">
+<img src="{{ url_for('static', filename='assets/images/new_logo.png') }}" alt="logo" />
+</a>
+</div>
+<div class="main-nav">
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-light">
+<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+<ul class="navbar-nav text-center">
+<li class="nav-item">
+<a href="/" class="nav-link">HOME</a>
+</li>
+<li class="nav-item">
+<a href="/about" class="nav-link">ABOUT</a>
+</li>
+<li class="nav-item">
+<a href="/prognosis" class="nav-link">PROGNOSIS</a>
+</li>
+
+<li class="nav-item">
+    <a href="/chatbot" class="nav-link active">CHATBOT</a>
+</li>
+
+<li class="nav-item">
+    <a href="/relaxation" class="nav-link">Relaxation Tools</a>
+</li>
+
+<li class="nav-item">
+    <a href="/supporthub" class="nav-link">Support Hub</a>
+</li>
+
+<li class="nav-item">
+<a href="/blog" class="nav-link">BLOG</a>
+</li>
+
+
+</div>
+<div class="nav-right">
+</div>
+<div class="nav-btn">
+<a href="/prognosis" class="box-btn">Get Started</a>
+</div>
+</nav>
+</div>
+</div>
+</div>
+
+
+<div class="page-title-area">
+<div class="container">
+<div class="page-title-content">
+<h2>Chatbot</h2>
+<ul>
+<li>
+<a href="/">
+Home
+</a>
+</li>
+<li class="active">Chatbot</li>
+</ul>
+</div>
+</div>
+<div class="page-shape">
+<div class="shape1">
+<img src="{{ url_for('static', filename='assets/images/shape/1.png') }}" alt="shape" />
+</div>
+<div class="shape3">
+<img src="{{ url_for('static', filename='assets/images/shape/3.png') }}" alt="shape" />
+</div>
+<div class="shape4">
+<img src="{{ url_for('static', filename='assets/images/shape/4.png') }}" alt="shape" />
+</div>
+<div class="shape5">
+<img src="{{ url_for('static', filename='assets/images/shape/5.png') }}" alt="shape" />
+</div>
+<div class="shape6">
+<img src="{{ url_for('static', filename='assets/images/shape/6.png') }}" alt="shape" />
+</div>
+</div>
+</div>
+
+<style>
+    /* Chatbot UI Styles */
+    .chat-container {
+        max-width: 600px;
+        margin: 50px auto;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    .chat-header {
+        background-color: #28a745; /* Changed color for differentiation */
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background-color: #f9f9f9;
+    }
+
+    .chat-input {
+        display: flex;
+        border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        outline: none;
+    }
+
+    .chat-input button {
+        padding: 15px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+    }
+
+    .message {
+        margin-bottom: 15px;
+        display: flex;
+    }
+
+    .message.user .message-text {
+        background-color: #28a745;
+        color: white;
+        align-self: flex-end;
+        border-radius: 15px 15px 0 15px;
+        margin-left: auto;
+    }
+
+    .message.bot .message-text {
+        background-color: #e5e5ea;
+        color: black;
+        align-self: flex-start;
+        border-radius: 15px 15px 15px 0;
+        margin-right: auto;
+    }
+
+    .message-text {
+        padding: 10px 15px;
+        max-width: 80%;
+        display: inline-block;
+        word-wrap: break-word;
+    }
+
+    /* Optional: Scrollbar Styling */
+    .chat-messages::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+</style>
+
+
+<body>
+    
+    <div class="chat-container">
+     <div id="chat-messages" class="chat-messages">
+         <!-- Messages will appear here -->
+     </div>
+     <div class="chat-input">
+         <input id="user-input" type="text" placeholder="Type your message..." />
+         <button id="send-button">Send</button>
+     </div>
+ </div>
+ 
+     <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+ 
+ <!-- Chatbot Script -->
+ <script>
+     document.getElementById('send-button').addEventListener('click', sendMessage);
+     document.getElementById('user-input').addEventListener('keypress', function (e) {
+         if (e.key === 'Enter') {
+             sendMessage();
+         }
+     });
+ 
+     function appendMessage(sender, text) {
+         const chatMessages = document.getElementById('chat-messages');
+         const messageDiv = document.createElement('div');
+         messageDiv.classList.add('message', sender);
+         const messageText = document.createElement('div');
+         messageText.classList.add('message-text');
+         messageText.innerText = text;
+         messageDiv.appendChild(messageText);
+         chatMessages.appendChild(messageDiv);
+         chatMessages.scrollTop = chatMessages.scrollHeight;
+     }
+ 
+     function sendMessage() {
+         const userInput = document.getElementById('user-input');
+         const message = userInput.value.trim();
+         if (message === "") return;
+ 
+         appendMessage('user', message);
+         userInput.value = '';
+ 
+         // Make the request to the Flask backend
+         fetch('/chat', {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({ message: message })
+         })
+         .then(response => response.json())
+         .then(data => {
+             const botResponse = data.response;
+             appendMessage('bot', botResponse);
+         })
+         .catch((error) => {
+             console.error('Error:', error);
+             appendMessage('bot', 'Sorry, something went wrong.');
+         });
+     }
+ 
+ </script>
+ 
+ </body>
+ 
+
+
+
+
+
+<div class="go-top">
+<i class="bx bx-chevrons-up"></i>
+<i class="bx bx-chevrons-up"></i>
+</div>
+
+
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/meanmenu.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/magnific-popup.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/wow.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/isotope.pkgd.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/ajaxchimp.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/form-validator.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/contact-form-script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+
+</html>
